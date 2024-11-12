@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Hariom - Portfolio Website</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: Sans-Serif;
+    }
+    body{
+       background-color:white;
+       font-size: 20px;
+     }
+    nav{
+       display: flex;
+       height: 101px;
+       background-color:rgba(11,85,221,0.75) ;
+       color: white;
+    }
+    nav div{
+       margin:30px 20px;
+    }
+     .left{
+       font-size: 2.2rem;
+     }
+     .firstSection{
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       margin: 23px 0;
+     }
+     section.firstSection div{
+       margin:0 25px;
+       width: 42%;
+       font-size: 2.567rem;
+     }
+     span{
+       color:rgba(0,0,255,0.8);
+     }
+     img{
+       width: 100%;
+       height: 400px;
+     }
+     main hr{
+       border: 1px;
+       background: white;
+       height: 1.2px;
+       margin: 50px 20px;
+     }
+     .secondSection{
+       margin: 0 35px;
+       background-color: ;
+     }
+     .heading{
+       text-align: center;
+       font-size: 2.3rem;
+       color: rgba(25,84,249,0.9);
+     }
+     .content{
+       margin: 20px 0;
+       font-size: 0.97rem;
+       color: rgba(0,0,0,0.8);
+     }
+     .thirdSection{
+       margin: 0 35px 80px;
+     }
+     .abc{
+       margin: 13px 30px 9px 10px;
+       font-size: 30px;
+     }
+     .xyz{
+       display:flex;
+     }
+     .bigbox{
+       margin: 24px 2px;
+       height: 100px;
+       width:100%;
+       color: rgba(0,0,0,0.8);
+       border:solid 2px rgb(129,157,234);
+       border-radius: 26px;
+     }
+     .left-c{
+       padding: 15px 15px 0px;
+       width:50%;
+     }
+     .right-c{
+       display: flex;
+       padding: 15px 15px 0px;
+       flex-direction: row-reverse;
+       width:50%;
+     }
+     .pbar{
+       margin: 15px 17px 0px;
+       padding: 2px;
+     }
+     .p1{
+       height:5px;
+       width:97%;
+       border: solid 1px rgb(15,91,248);
+       background-color: rgb(148,181,250);
+       border-radius: 11px;
+     }
+     .p2{
+       height:5px;
+       width:93%;
+       border: solid 1px rgb(15,91,248);
+       background-color: rgb(148,181,250);
+       border-radius: 11px;
+     }
+     .p3{
+       height:5px;
+       width:82%;
+       border: solid 1px rgb(15,91,248);
+       background-color: rgb(148,181,250);
+       border-radius: 11px;
+     }
+     .p4{
+       height:5px;
+       width:73%;
+       border: solid 1px rgb(15,91,248);
+       background-color: rgb(148,181,250);
+       border-radius: 11px;
+     }
+      .form-group {
+        margin-bottom: 25px;
+      }
+      input, textarea{
+        font-size: 1.7rem;
+        width:470px;
+        padding: 15px;
+        border: solid 2px rgb(145,180,255);
+        border-radius: 24px;
+        color: rgba(0,0,0,0.75);
+      }
+      button {
+        font-size: 1.7rem;
+        background-color:rgb(99,148,254);
+        color: white;
+        padding: 13px 23px;
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+      input::-webkit-input-placeholder {
+        color: rgba(0,0,0,0.75);
+      }
+      textarea::-webkit-input-placeholder {
+        color: rgba(0,0,0,0.75);
+      }
+      #successMessage{
+        display:none;
+        font-size: 2rem;
+        margin-top: 15px;
+        color: rgba(25,84,249,0.9);
+      }
+      #successMessage.visible {
+        font-family: Sans-Serif;
+        display:block;
+      }
+      hr.u{
+        margin: 13px 25rem 60px;
+        height: 2px;
+        background-color: rgba(25,84,249,0.9);
+      }
+      .center{
+        text-align: center;
+        height:630px;
+      }
+     footer{
+       color:white;
+       background-color: rgba(13,46,119,0.956);
+       padding:20px;
+       height:300px;
+     }
+     .footer{
+       text-align: center;
+       margin:20px;
+     }
+     .f1st{
+       font-size: 3.5rem;
+       margin: 25px;
+     }
+     .f2nd{
+       font-size: 1.77rem;
+       margin: 30px;
+     }
+    footer a{
+      text-decoration: none;
+      color:#ffffffdb;
+    }
+    .f3rd{
+      margin-top: 40px;
+      font-size: 1.8rem;
+      background-color: ;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Hariom's Portfolio</div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, My name is <span>Hariom</span><br>and I am a passionate
+          <!-- Element to contain animated typing -->
+          <br><span id="element"></span>
+        </div>
+        <div class="rightSection">
+          <img src="/img/web.png">
+        </div>
+      </section>
+      <hr>
+      <section class="secondSection">
+        <div>
+        <div class="heading">About</div>
+        <hr class="u">
+        <div class="content">I'm a B.Tech Computer Science Engineering student with a keen interest in both front-end and back-end web development. I've honed my skills in languages like C, Python, Java, Html, Css, Javascript, Php, React and Node.js, building projects like a classic snake game during my studies. This strong foundation allows me to excel in both development areas. I'm a lifelong learner, always eager to explore new technologies and create innovative web applications.</div>
+        </div>
+      </section>
+      <hr>
+      <section class="thirdSection">
+        <div class="heading">Skills</div>
+        <hr class="u">
+        <div class="abc">
+          <div class="bigbox">
+            <div class="xyz"><div class="left-c">HTML</div><div class="right-c">97%</div></div>
+            <div class="pbar">
+              <div class="p1"></div>
+            </div>
+          </div>
+          <div class="bigbox">
+            <div class="xyz"><div class="left-c">CSS</div><div class="right-c">93%</div>
+            </div>
+            <div class="pbar"><div class="p2"></div></div>
+          </div>
+          <div class="bigbox">
+            <div class="xyz"><div class="left-c">Javascript</div><div class="right-c">82%</div></div>
+            <div class="pbar"><div class="p3"></div>
+            </div>
+          </div>
+          <div class="bigbox">
+            <div class="xyz"><div class="left-c">React</div><div class="right-c">73%</div></div>
+            <div class="pbar"><div class="p4"></div></div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section class="fourthSection">
+        <div class="heading">Contact</div>
+        <hr class="u">
+        <div class="center">
+        <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="6" ></textarea>
+        </div>
+        <button type="submit">Send</button>
+        <div id="successMessage" class="hidden">Message Sent!</div>
+        </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="f1st"><h3>Hariom</h3></div>
+        <div class="f2nd"><a href="https://www.linkedin.com/in/hariom-kumar-572b9030b">LinkedIn</a></div>
+        <div class="f3rd">Hariom's Portfolio | All rights reserved.</div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed('#element', {
+        strings: ['Web Designer','Java Programmer','Web Developer.'],
+        typeSpeed: 60,
+      });
+    </script>
+    <script>
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      successMessage.classList.add('visible');
+      form.reset();
+      });
+    </script>
+  </body>
+</html>

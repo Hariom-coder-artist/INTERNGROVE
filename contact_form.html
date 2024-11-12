@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body{
+        font-family: Arial;
+        background:;
+      }
+      .contact-container{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .form{
+        display:flex;
+        flex-direction: column;
+        align-items: start;
+        gap:20px;
+      }
+      .heading{
+        font-weight: 600;
+        color: rgba(0,0,0,0.7);
+        font-size: 40px;
+      }
+      .contact-input{
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+        border:solid 2px rgba(0,0,0,0.7);
+        outline:none;
+        padding-left:15px;
+        font-weight: 500;
+        color: #666;
+        border-radius: 11px;
+      }
+      textarea.contact-input{
+        font-family: Arial;
+        font-size: 16px;
+        height:140px;
+        padding-top: 15px;
+      }
+      button{
+        font-family: Arial;
+        display:flex;
+        align-items:center;
+        background-color: ;
+        padding: 10px 20px;
+        font-size: 17px;
+        color: rgba(0,0,0,0.7);
+        font-weight: 600;
+        background-color: white;
+        border-radius: 11px;
+      }
+      @media (max-width:100px){
+        .contact-input{
+          width: 80vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+    <form method="POST" id="contactForm" class="form">
+      <div class="heading">Contact</div>
+      
+      <input type="hidden" name="access_key" value="e8216df2-f0a8-4271-a82b-987c59fef163">
+      
+      <input class="contact-input" type="text" id="name" name="name" placeholder="Name" required>
+      <input class="contact-input" type="email" id="name" name="email" placeholder="Email" required>
+      <textarea class="contact-input" id="message" name="message" placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+      
+      <div id="result"></div>
+    </form>
+    </div>
+    <script>
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('result');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      result.innerHTML = "Please wait..."
+    
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Form submitted successfully";
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+            });
+    });
+    </script>
+  </body>
+</html>
